@@ -5,8 +5,8 @@ body {
 }
 button {
 	background-color: white;
-	width: 150px;
-	height: 50px;
+	width: 120px;
+	height: 30px;
 	border-radius: 5%;
 	border: solid black 1px;
 	cursor: pointer;
@@ -20,7 +20,7 @@ button {
 	align-items: center;
 }
 
-.window {
+.windowElement {
 	display: flex;
 	width: 200px;
 	height: 200px;
@@ -46,4 +46,8 @@ button {
 
 .hidden {
 	display: none;
+}
+
+p {
+	color: white;
 }
