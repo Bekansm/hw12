@@ -24,8 +24,8 @@ colorTypes.forEach(type => {
 });
 //Изменение текста
 inputButton.addEventListener("click", (e) => {
-    const textValue = inputText.value;
-    if (textValue.trim()===""){
+    const textValue = inputText.value.trim();
+    if (textValue===""){
         alert("Необходимо ввести текст");
     }else{
 content.textContent = inputText.value;
@@ -48,24 +48,13 @@ function figureType(type){
 }
 //Поиск цвета по названию из colors
 function getColorByTitle(title) {
-    return colors.find(color => color.title === title).hex;
+    const color = colors[title];  
+    return color.hex
 }
 
-const colors = [
-    {
-      title: "Красный",
-      hex: "#E32636"
-    },
-    {
-      title: "Черный",
-      hex: "#000000"
-    },
-    {
-      title: "Зеленый",
-      hex: "#138808"
-    },
-    {
-      title: "Синий",
-      hex: "#1560BD"
-    }
-  ];
+const colors = {
+    "Красный": { hex: "#E32636" },
+    "Черный": { hex: "#000000" },
+    "Зеленый": { hex: "#138808" },
+    "Синий": { hex: "#1560BD" }
+};
