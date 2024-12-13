@@ -35,6 +35,7 @@ content.textContent = inputText.value;
 resetButton.addEventListener("click", (e) => {
     figure.classList.add("hidden");
     content.textContent = "";
+    inputText.value = "";
 })
 //Функция для изменения фигуры
 function figureType(type){
