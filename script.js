@@ -1,35 +1,25 @@
-
 const figure = document.querySelector(".figure");
 const figureTypes = document.querySelectorAll(".type");
 const colorTypes = document.querySelectorAll(".color");
-const content = document.querySelector("p");
-const inputText = document.querySelector("input");
 const inputButton = document.querySelector(".addText");
+const inputText = document.querySelector("input");
+const content = document.querySelector("p");
 const resetButton = document.querySelector(".reset");
 //Выбор фигуры
 figureTypes.forEach(type => {
-    type.addEventListener("click", (e) =>{  
-        figureType(e.target.textContent);
+    type.addEventListener("click", (e) =>{ figureType(e.target.textContent);
      })
 });
 //Выбор цвета
 colorTypes.forEach(type => {
     type.addEventListener("click", (e) =>{  
-        if (figure.classList.contains("hidden")){
-            alert("Сперва выберите фигуру");
-        } else {
-        figure.style.backgroundColor = getColorByTitle(e.target.textContent);
-        }
+        figure.style.backgroundColor = figure.classList.contains("hidden") ? alert("Сперва выберите фигуру") : colors[e.target.textContent].hex;
      })
 });
 //Изменение текста
-inputButton.addEventListener("click", (e) => {
+inputButton.addEventListener("click", (e) => {  
     const textValue = inputText.value.trim();
-    if (textValue===""){
-        alert("Необходимо ввести текст");
-    }else{
-content.textContent = inputText.value;
-    }
+    content.textContent = textValue!== "" ? inputText.value : alert("Необходимо ввести текст");
 })
 //Сброс
 resetButton.addEventListener("click", (e) => {
@@ -40,16 +30,7 @@ resetButton.addEventListener("click", (e) => {
 //Функция для изменения фигуры
 function figureType(type){
     figure.classList.remove("hidden");
-    if (type==="Круг"){
-        figure.style.borderRadius = "100%";
-    } else {
-        figure.style.borderRadius = "0%";
-    }
-}
-//Поиск цвета по названию из colors
-function getColorByTitle(title) {
-    const color = colors[title];  
-    return color.hex
+    figure.style.borderRadius = type === "Круг" ? "50%" : "0%";
 }
 
 const colors = {
