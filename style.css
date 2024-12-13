@@ -1,0 +1,49 @@
+body {
+	display: flex;
+	justify-content: center;
+	background-color: gray;
+}
+button {
+	background-color: white;
+	width: 150px;
+	height: 50px;
+	border-radius: 5%;
+	border: solid black 1px;
+	cursor: pointer;
+}
+
+.workspace {
+	display: flex;
+	flex-direction: column;
+	margin-top: 200px;
+	gap: 30px;
+	align-items: center;
+}
+
+.window {
+	display: flex;
+	width: 200px;
+	height: 200px;
+	background-color: white;
+}
+
+.figure {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+	width: 150px;
+	height: 150px;
+	background-color: red;
+}
+
+.controllers {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 30px;
+}
+
+.hidden {
+	display: none;
+}
